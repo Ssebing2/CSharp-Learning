@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOP.Character;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,9 @@ namespace OOP.Logo
     {
        
 
-        public static void PrintLettuce()
+        public static void PrintLogo(int startX, int startY)
         {
-            // 번이 캐릭터 도트 배열
-            string[] Lettuce =
+            string[] Logo =
             {
                 "................................",
                 "................................",
@@ -50,18 +50,19 @@ namespace OOP.Logo
      
             };
 
-            // 배열에서 한 줄씩 꺼내기
-            foreach (string line in Lettuce)
+            for (int y = 0; y < Logo.Length; y++)
             {
-                // 한 줄 안의 문자를 하나씩 꺼내기
-                foreach (char pixel in line)
+
+                for (int x = 0; x < Logo[y].Length; x++)
                 {
+                    char pixel = Logo[y][x];
+
+                    if (pixel == '.')
+                    {
+                        continue;
+                    }
                     switch (pixel)
                     {
-                        // 투명 배경
-                        case '.':
-                            Console.BackgroundColor = ConsoleColor.Black;
-                            break;
 
                         // 검은색 외곽선
                         case 'K':
@@ -103,12 +104,11 @@ namespace OOP.Logo
                             break;
                     }
 
-                    // 가로 비율을 맞추기 위해 공백 두 칸 출력
-                    Console.Write("  ");
+                    Console.SetCursorPosition(startX + x, startY + y);
+                    Console.Write(" ");
                 }
 
                 Console.ResetColor();
-                Console.WriteLine();
 
 
 

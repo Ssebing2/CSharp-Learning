@@ -22,36 +22,46 @@ namespace BurgerDream.Game
             _y = y;
         }
         
-
+        
 
         public static void ShowTitleA() // 게임 타이틀화면
         {
             Console.OutputEncoding = Encoding.UTF8;
 
             Console.SetCursorPosition(10, 1);
-
-            int x = 10;
+            int centerx = 10;
             int y = 1;
 
-            
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.SetCursorPosition(x, y);
-                Console.WriteLine("███████████  █████  █████ ███████████     █████████  ██████████ ███████████");
-                Console.SetCursorPosition(x, y+1);
-                Console.WriteLine("░███░░░░░███░░███  ░░███ ░░███░░░░░███   ███░░░░░███░░███░░░░░█░░███░░░░░███");
-                Console.SetCursorPosition(x, y+2);
-                Console.WriteLine("░███    ░███ ░███   ░███  ░███    ░███  ███     ░░░  ░███  █ ░  ░███    ░███");
-                Console.SetCursorPosition(x, y+3);
-                Console.WriteLine("░██████████  ░███   ░███  ░██████████  ░███          ░██████    ░██████████");
-                Console.SetCursorPosition(x, y+4);
-                Console.WriteLine("░███░░░░░███ ░███   ░███  ░███░░░░░███ ░███    █████ ░███░░█    ░███░░░░░███");
-                Console.SetCursorPosition(x, y+5);
-                Console.WriteLine("░███    ░███ ░███   ░███  ░███    ░███ ░░███  ░░███  ░███ ░   █ ░███    ░███");
-                Console.SetCursorPosition(x, y+6);
-                Console.WriteLine("███████████  ░░████████   █████   █████ ░░█████████  ██████████ █████   █████");
-                Console.SetCursorPosition(x, y+7);
-                Console.WriteLine("░░░░░░░░░░░    ░░░░░░░░   ░░░░░   ░░░░░   ░░░░░░░░░  ░░░░░░░░░░ ░░░░░   ░░░░░");
-                Console.SetCursorPosition(x, y+8);
+            void PrintCenter(string text, int yPos) // 가운데 정렬
+            {
+                int realLength = 0;
+
+                foreach (char c in text)
+                {
+                    if (c >= '가' && c <= '힣')
+                    {
+                        realLength += 2;
+                    }
+
+                    else
+                    {
+                        realLength += 1;
+                    }
+                }
+                Console.SetCursorPosition(centerx , yPos);
+                Console.Write(text);
+            }
+
+
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+                PrintCenter("███████████  █████  █████ ███████████     █████████  ██████████ ███████████", y);
+                PrintCenter("░███░░░░░███░░███  ░░███ ░░███░░░░░███   ███░░░░░███░░███░░░░░█░░███░░░░░███", y + 1);
+                PrintCenter("░███    ░███ ░███   ░███  ░███    ░███  ███     ░░░  ░███  █ ░  ░███    ░███", y + 2);
+                PrintCenter("░██████████  ░███   ░███  ░██████████  ░███          ░██████    ░██████████", y + 3);
+                PrintCenter("░███░░░░░███ ░███   ░███  ░███░░░░░███ ░███    █████ ░███░░█    ░███░░░░░███", y + 4);
+                PrintCenter("░███    ░███ ░███   ░███  ░███    ░███ ░░███  ░░███  ░███ ░   █ ░███    ░███", y + 5);
+                PrintCenter("███████████  ░░████████   █████   █████ ░░█████████  ██████████ █████   █████", y + 6);
+                PrintCenter("░░░░░░░░░░░    ░░░░░░░░   ░░░░░   ░░░░░   ░░░░░░░░░  ░░░░░░░░░░ ░░░░░   ░░░░░", y + 7);
                 Console.ResetColor();
             
         }
@@ -61,92 +71,106 @@ namespace BurgerDream.Game
             Console.OutputEncoding = Encoding.UTF8;
 
             Console.SetCursorPosition(45, 9);
-
-            int x = 45;
+            int centerx = 45;
             int y = 9;
 
+            void PrintCenter(string text, int yPos) // 가운데 정렬
+            {
+                int realLength = 0;
+
+                foreach (char c in text)
+                {
+                    if (c >= '가' && c <= '힣')
+                    {
+                        realLength += 2;
+                    }
+
+                    else
+                    {
+                        realLength += 1;
+                    }
+                }
+                Console.SetCursorPosition(centerx , yPos);
+                Console.Write(text);
+            }
+
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.SetCursorPosition(x, y);
-            Console.WriteLine("██████████   ███████████   ██████████   █████████   ██████   ██████");
-            Console.SetCursorPosition(x, y+1);
-            Console.WriteLine("░███░░░░███ ░░███░░░░░███ ░░███░░░░░█  ███░░░░░███ ░░██████ ██████");
-            Console.SetCursorPosition(x, y+2);
-            Console.WriteLine("░███   ░░███ ░███    ░███  ░███  █ ░  ░███    ░███  ░███░█████░███");
-            Console.SetCursorPosition(x, y+3);
-            Console.WriteLine("░███    ░███ ░██████████   ░██████    ░███████████  ░███░░███ ░███");
-            Console.SetCursorPosition(x, y+4);
-            Console.WriteLine("░███    ░███ ░███░░░░░███  ░███░░█    ░███░░░░░███  ░███ ░░░  ░███");
-            Console.SetCursorPosition(x, y+5);
-            Console.WriteLine("░███    ███  ░███    ░███  ░███ ░   █ ░███    ░███  ░███      ░███");
-            Console.SetCursorPosition(x, y+6);
-            Console.WriteLine("██████████   █████   █████ ██████████ █████   █████ █████     █████");
-            Console.SetCursorPosition(x, y+7);
-            Console.WriteLine("░░░░░░░░░░   ░░░░░   ░░░░░ ░░░░░░░░░░ ░░░░░   ░░░░░ ░░░░░     ░░░░░");
+            PrintCenter("██████████   ███████████   ██████████   █████████   ██████   ██████", y);
+            PrintCenter("░███░░░░███ ░░███░░░░░███ ░░███░░░░░█  ███░░░░░███ ░░██████ ██████", y + 1);
+            PrintCenter("░███   ░░███ ░███    ░███  ░███  █ ░  ░███    ░███  ░███░█████░███", y + 2);
+            PrintCenter("░███    ░███ ░██████████   ░██████    ░███████████  ░███░░███ ░███", y + 3);
+            PrintCenter("░███    ░███ ░███░░░░░███  ░███░░█    ░███░░░░░███  ░███ ░░░  ░███", y + 4);
+            PrintCenter("░███    ███  ░███    ░███  ░███ ░   █ ░███    ░███  ░███      ░███", y + 5);
+            PrintCenter("██████████   █████   █████ ██████████ █████   █████ █████     █████", y + 6);
+            PrintCenter("░░░░░░░░░░   ░░░░░   ░░░░░ ░░░░░░░░░░ ░░░░░   ░░░░░ ░░░░░     ░░░░░", y + 7);
             Console.ResetColor();
         }
 
         public static void ShowMainMenu(int select) // 게임 메인메뉴
         {
             Console.SetCursorPosition(60, 23);
-
             int centerx = 60;
             int y = 23;
 
-            if (select == 0)
+            void PrintCenter(string text, int yPos) // 가운데 정렬
             {
-                string text1 = "▶ 게임 시작";
+                int realLength = 0;
+
+                foreach (char c in text)
+                {
+                    if (c >= '가' && c <= '힣')
+                    {
+                        realLength += 2;
+                    }
+
+                    else
+                    {
+                        realLength += 1;
+                    }
+                }
+                Console.SetCursorPosition(centerx - (realLength / 2), yPos);
+                Console.Write(text);
+            }
+
+            if (select == 0)
+            { 
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.SetCursorPosition(centerx - (text1.Length / 2), y);
-                Console.WriteLine(text1);
+                PrintCenter("▶ 게임 시작", y - 1);
                 Console.ResetColor();
             }
             else
             {
-                string text2 = "  게임 시작";
-                Console.SetCursorPosition(centerx - (text2.Length / 2), y);
-                Console.WriteLine(text2);
+                PrintCenter("  게임 시작", y - 1);
             }
 
             if (select == 1)
             {
-                string text3 = "▶ 게임 설명";
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.SetCursorPosition(centerx - (text3.Length / 2), y+1);
-                Console.WriteLine(text3);
+                PrintCenter("▶ 게임 설명", y);
                 Console.ResetColor();
             }
 
             else
             {
-                string text4 = "  게임 설명";
-                Console.SetCursorPosition(centerx - (text4.Length / 2), y+1);
-                Console.WriteLine(text4);
+                PrintCenter("  게임 설명", y);
             }
 
             if (select == 2)
             {
-                string text5 = "▶ 게임 종료";
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.SetCursorPosition(centerx - (text5.Length / 2), y+2);
-                Console.WriteLine(text5);
+                PrintCenter("▶ 게임 종료", y + 1);
+                Console.ResetColor();
 
             }
             else
             {
-                string text6 = "  게임 종료";
-                Console.SetCursorPosition(centerx - (text6.Length / 2), y+2);
-                Console.WriteLine(text6);
+                PrintCenter("  게임 종료", y + 1);
             }
         }
 
         public static void ShowBune()
         {
-            Console.SetCursorPosition(20, 10);
-            int x = 20;
-            int y = 10;
-
-            Console.SetCursorPosition(x, y);
-            SmallBun.PrintBun();
+            SmallBun.PrintsmallBun(5, 8);
         }
 
         public static void Description()
@@ -203,102 +227,293 @@ namespace BurgerDream.Game
             int centerx = 60;
             int y = 15;
 
-            string text1 = "BURGER DREAM";
-            Console.SetCursorPosition(centerx -(text1.Length / 2), y - 1);
-            Console.WriteLine(text1);
-            Console.WriteLine();
-            string text2 = "Press Any Key...";
-            Console.SetCursorPosition(centerx - (text2.Length / 2), y);
-            Console.WriteLine(text2);
+            void PrintCenter(string text, int yPos) // 가운데 정렬
+            {
+                int realLength = 0;
+
+                foreach(char c in text)
+                {
+                    if (c >= '가' && c <= '힣')
+                    {
+                        realLength += 2;
+                    }
+
+                    else
+                    {
+                        realLength += 1;
+                    }
+                }
+                Console.SetCursorPosition(centerx - (realLength / 2), yPos);
+                Console.Write(text);
+            }
+
+            PrintCenter("BURGER DREAM", y - 1);
+            PrintCenter("Press Any Key...", y); 
             Console.ReadKey(true);
             Console.Clear();
-
-            string text3 = "5년 전...";
-            Console.SetCursorPosition(centerx - (text3.Length / 2), y);
-            Console.WriteLine(text3);
-            Console.WriteLine();
+            
+            PrintCenter("5년 전...", y);
+            Thread.Sleep(2000);
+            Console.Clear();
+           
+            PrintCenter("오랫동안 햄버거를 만드는 것을 좋아했던 '번이'.", y);
             Thread.Sleep(2000);
             Console.Clear();
 
-            string text4 = "오랫동안 햄버거를 만드는 것을 좋아했던 '번이'.";
-            Console.SetCursorPosition(centerx - (text4.Length / 2), y );
-            Console.WriteLine(text4);
-            Console.WriteLine();
+            PrintCenter("언젠가는 모두가 행복해지는 햄버거 가게를", y - 1);
+            PrintCenter("운영하는 것이 그의 오랜 꿈이었습니다.", y);
             Thread.Sleep(2000);
             Console.Clear();
 
-            string text5 = "언젠가는 모두가 행복해지는 햄버거 가게를";
-            Console.SetCursorPosition(centerx - (text5.Length / 2), y - 1);
-            Console.WriteLine(text5);
-            string text6 = "운영하는 것이 그의 오랜 꿈이었습니다.";
-            Console.SetCursorPosition(centerx - (text6.Length / 2), y);
-            Console.WriteLine(text6);
-            Console.WriteLine();
+            PrintCenter("하지만 가진 돈은 얼마 없었고,", y - 1);
+            PrintCenter("5년동안 쓰리잡을 하며 겨우 모은 돈으로", y);
+            PrintCenter("작은 가게 하나를 겨우 열 수 있었습니다.", y + 1);
+            Thread.Sleep(3000);
+            Console.Clear();
+
+            PrintCenter("첫 손님을 맞이하는 오늘.", y - 1);
+            PrintCenter("이 작은 가게가 최고의 햄버거 가게가 될 수 있을까요?", y);
             Thread.Sleep(2000);
             Console.Clear();
 
-            string text7 = "하지만 가진 돈은 얼마 없었고,";
-            Console.SetCursorPosition(centerx - (text7.Length / 2), y - 1);
-            Console.WriteLine(text7);
-            string text8 = "5년동안 쓰리잡을 하며 겨우 모은 돈으로";
-            Console.SetCursorPosition(centerx - (text8.Length / 2), y);
-            Console.WriteLine(text8);
-            string text9 = "작은 가게 하나를 겨우 열 수 있었습니다.";
-            Console.SetCursorPosition(centerx - (text9.Length / 2), y + 1);
-            Console.WriteLine(text9);
-            Console.WriteLine();
+            PrintCenter("손님의 주문을 정확하게 만들고", y - 1);
+            PrintCenter("돈을 모아 가게를 성장시켜 보세요!", y);
             Thread.Sleep(2000);
             Console.Clear();
 
-            string text10 = "첫 손님을 맞이하는 오늘.";
-            Console.SetCursorPosition(centerx - (text10.Length / 2), y - 1);
-            Console.WriteLine(text10);
-            string text11 = "이 작은 가게가 최고의 햄버거 가게가 될 수 있을까요?";
-            Console.SetCursorPosition(centerx - (text11.Length / 2), y);
-            Console.WriteLine(text11);
-            Console.WriteLine();
+            PrintCenter("최고의 햄버거는 최고의 정성에서 시작됩니다.", y);
             Thread.Sleep(2000);
             Console.Clear();
 
-            string text12 = "손님의 주문을 정확하게 만들고";
-            Console.SetCursorPosition(centerx - (text12.Length / 2), y - 1);
-            Console.WriteLine(text12);
-            string text13 = "돈을 모아 가게를 성장시켜 보세요!";
-            Console.SetCursorPosition(centerx - (text13.Length / 2), y);
-            Console.WriteLine(text13);
-            Console.WriteLine();
-            Thread.Sleep(2000);
-            Console.Clear();
-
-            string text14 = "최고의 햄버거는 최고의 정성에서 시작됩니다.";
-            Console.SetCursorPosition(centerx - (text14.Length / 2), y - 1);
-            Console.WriteLine(text14);
-            Console.WriteLine();
-            Thread.Sleep(2000);
-            Console.Clear();
-
-            string text15 = "Press Any Key...";
-            Console.SetCursorPosition(centerx - (text15.Length / 2), y);
-            Console.WriteLine(text15);
+            PrintCenter("Press Any Key...", y);
             Console.ReadKey(true);
+
+            Console.Clear();
+
+
+            PrintCenter( "Day 1", y - 1);
+            PrintCenter ("첫 영업을 시작합니다.", y);
+            Thread.Sleep(1500);
+            Console.Clear();
         }
+
+        public static void StorySkip()
+        {
+            bool watchStory = StorySelect();
+
+            if (watchStory)
+            {
+                Console.Clear ();
+                Story();
+            }
+
+            InteriorHall();
+
+        }
+
+        static bool StorySelect()
+        {
+            int select = 0;
+
+            while (true)
+            {
+                Console.Clear ();
+
+                Console.SetCursorPosition(45, 15);
+                Console.WriteLine("스토리를 보시겠습니까?");
+
+                string[] menu = { "스토리 보기", "스토리 스킵" };
+
+                for (int i = 0; i < menu.Length; i++)
+                {
+                    Console.SetCursorPosition(48, 18 + i * 2);
+
+                    if (select == i)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("▶ " + menu[i]);
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write("  " + menu[i]);
+                    }
+                }
+                Console.ResetColor();
+
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                switch (key.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        select--;
+
+                        if (select < 0)
+                        {
+                            select = 1;
+                        }
+                        break;
+
+                        case ConsoleKey.DownArrow:
+                        select++;
+
+                        if (select > 1)
+                        {
+                            select = 0;
+                        }
+                        break;
+
+                    case ConsoleKey.Enter:
+                        return select == 0;
+                }
+            }
+        }
+
+
 
         public static void Play() // 게임 플레이
         {
+            InteriorHall();
+
+            InteriorOrder();
+        }
+
+        public static void InteriorHall() // 가게 홀
+        {
+            Console.CursorVisible = false;
             Console.Clear();
+
+            OOP.Shop_Supplies.WallTile.DrawWall(5, 1);
+            OOP.Shop_Supplies.Tile_check.DrawFloor(5, 15);
+            OOP.Character.Bun.PrintBun(5, 3);
+            OOP.Shop_Supplies.Table.PrintTable(60, 10);
+            OOP.Shop_Supplies.Chair.PrintChair(35, 10);
+            OOP.Shop_Supplies.Chair.PrintChair(85, 10);
+            GoGame();
+
+
+            Console.ResetColor();
+            Console.ReadKey(true);
+        }
+
+        public static void GoGame()
+        {
+            bool GoGame = HallSelect();
+
+            if (GoGame)
+            {
+                InteriorOrder();
+            }
+
+            GameManager.TitieCollection();
+
+        }
+
+        static bool HallSelect() // 손님 받기 선택
+        {
+            int select = 0;
+
+            while (true)
+            {     
+                Console.SetCursorPosition(70, 18);           
+
+                string[] menu = { "손님 받기", "장사 안하기" };
+
+                for (int i = 0; i < menu.Length; i++)
+                {
+                    Console.SetCursorPosition(70, 18 + i * 2);
+
+                    if (select == i)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        Console.Write("▶ " + menu[i]);
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write("  " + menu[i]);
+                    }
+                }
+                Console.ResetColor();
+
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                switch (key.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        select--;
+
+                        if (select < 0)
+                        {
+                            select = 1;
+                        }
+                        break;
+
+                    case ConsoleKey.DownArrow:
+                        select++;
+
+                        if (select > 1)
+                        {
+                            select = 0;
+                        }
+                        break;
+
+                    case ConsoleKey.Enter:
+                        return select == 0;
+                }
+            }
+        }
+
+        public static void ShowText()
+        {
             Console.SetCursorPosition(60, 15);
             int centerx = 60;
             int y = 15;
 
-            string text1 = "Day 1";
-            Console.SetCursorPosition(centerx - (text1.Length / 2), y - 1);
-            Console.WriteLine();
-            string text2 = "첫 영업을 시작합니다.";
-            Console.SetCursorPosition(centerx - (text2.Length / 2), y);
-            Console.WriteLine(text2);
-            Console.WriteLine();
-            Thread.Sleep(1500);
+            void PrintCenter(string text, int yPos) // 가운데 정렬
+            {
+                int realLength = 0;
+
+                foreach (char c in text)
+                {
+                    if (c >= '가' && c <= '힣')
+                    {
+                        realLength += 2;
+                    }
+
+                    else
+                    {
+                        realLength += 1;
+                    }
+                }
+                Console.SetCursorPosition(centerx - (realLength / 2), yPos);
+                Console.Write(text);
+            }
+            PrintCenter("어서오세요~ BURGER DREAM입니다!", y);
+            PrintCenter("주문 하시겠어요?", y + 1);
+            Thread.Sleep(3000);
             Console.Clear();
+        }
+
+
+        public static void InteriorOrder() // 가게 주문확인
+        {
+            Console.CursorVisible = false;
+            Console.Clear();
+
+            ShowText();
+
+            OOP.Shop_Supplies.WallTile.DrawWall(5, 1);
+            OOP.Shop_Supplies.Tile_check.DrawFloor(5, 15);
+            OOP.Character.Cheese.PrintCheese(80, 0);
+            OOP.Shop_Supplies.Counter.PrintCounter(70, 4);
+            OOP.Shop_Supplies.Table.PrintTable(23, 0);
+            OOP.Shop_Supplies.Chair.PrintChair(1, 0);
+            OOP.Shop_Supplies.Chair.PrintChair(45, 0);
+
+            Console.ResetColor();
+            Console.ReadKey(true);
+          
         }
 
         public void Nextday() // 시간 흐름

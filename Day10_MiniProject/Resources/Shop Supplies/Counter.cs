@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOP.Character;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,10 @@ namespace OOP.Shop_Supplies
     {
       
 
-        public static void PrintkitchenCounterTops()
+        public static void PrintCounter(int startX, int startY)
         {
             // 번이 캐릭터 도트 배열
-            string[] kitchenCounterTops =
+            string[] Counter =
             {
                 
                 "................................................",
@@ -52,12 +53,18 @@ namespace OOP.Shop_Supplies
 
 
             };
-            // 배열에서 한 줄씩 꺼내기
-            foreach (string line in kitchenCounterTops)
+            for (int y = 0; y < Counter.Length; y++)
             {
-                // 한 줄 안의 문자를 하나씩 꺼내기
-                foreach (char pixel in line)
+
+                for (int x = 0; x < Counter[y].Length; x++)
                 {
+                    char pixel = Counter[y][x];
+
+                    if (pixel == '.')
+                    {
+                        continue;
+                    }
+
                     switch (pixel)
                     {
                         // 투명 배경
@@ -120,12 +127,12 @@ namespace OOP.Shop_Supplies
                             break;
                     }
 
-                    // 가로 비율을 맞추기 위해 공백 두 칸 출력
-                    Console.Write("  ");
+                    Console.SetCursorPosition(startX + x, startY + y);
+                    Console.Write(" ");
                 }
 
                 Console.ResetColor();
-                Console.WriteLine();
+
 
 
 

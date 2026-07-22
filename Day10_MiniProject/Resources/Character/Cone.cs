@@ -9,10 +9,10 @@ namespace OOP.Character
     internal class Cone
     {
     
-        public static void PrintCone()
+        public static void PrintCone(int startX, int startY)
         {
             // 번이 캐릭터 도트 배열
-            string[] patty =
+            string[] Cone =
             {
                 "................................",
                 "................................",
@@ -48,12 +48,18 @@ namespace OOP.Character
                 "................................",
             };
 
-            // 배열에서 한 줄씩 꺼내기
-            foreach (string line in patty)
+            for (int y = 0; y < Cone.Length; y++)
             {
-                // 한 줄 안의 문자를 하나씩 꺼내기
-                foreach (char pixel in line)
+
+                for (int x = 0; x < Cone[y].Length; x++)
                 {
+                    char pixel = Cone[y][x];
+
+                    if (pixel == '.')
+                    {
+                        continue;
+                    }
+
                     switch (pixel)
                     {
                         // 투명 배경
@@ -116,8 +122,8 @@ namespace OOP.Character
                             break;
                     }
 
-                    // 가로 비율을 맞추기 위해 공백 두 칸 출력
-                    Console.Write("  ");
+                    Console.SetCursorPosition(startX + x, startY + y);
+                    Console.Write(" ");
                 }
 
                 Console.ResetColor();

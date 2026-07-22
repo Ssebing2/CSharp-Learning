@@ -23,10 +23,26 @@ namespace BurgerDream.Game
         }
     }
 
-    class Kitchen // 주방
+    class Ingredient // 재료
     {
-        // 햄버거 만들기
-        // 감자튀김 만들기
-        // 콜라 준비
+      
     }
+
+    class BurgerRecipe
+    {
+        
+
+    }
+
+    class Program
+    {
+
+
+
+    }
+
+
+
+
+
 }

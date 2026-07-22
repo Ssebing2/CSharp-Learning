@@ -9,14 +9,12 @@ namespace OOP.Character
     internal class Cheese
     {
        
-        public static void PrintCheese()
+        public static void PrintCheese(int startX, int startY)
         {
             // 번이 캐릭터 도트 배열
             string[] cheese =
             {
-                "................................",
-                "................................",
-                "................................",
+                
                 ".............RRRRRR.............",
                 "............RRYYYYRR............",
                 "...........RRYYYYYYRR...........",
@@ -46,21 +44,24 @@ namespace OOP.Character
                 "................................",
                 "................................",
                 "................................",
+                "................................",
+                "................................",
+                "................................",
             };
 
-            // 배열에서 한 줄씩 꺼내기
-            foreach (string line in cheese)
+            for (int y = 0; y < cheese.Length; y++)
             {
-                // 한 줄 안의 문자를 하나씩 꺼내기
-                foreach (char pixel in line)
+                for (int x = 0; x < cheese[y].Length; x++)
                 {
-                    switch (pixel)
-                    {
-                        // 투명 배경
-                        case '.':
-                            Console.BackgroundColor = ConsoleColor.Black;
-                            break;
+                    char pixel = cheese[y][x];
 
+                    if (pixel == '.')
+                    {
+                        continue;
+                    }
+
+                    switch (pixel)
+                    { 
                         // 검은색 외곽선
                         case 'K':
                             Console.BackgroundColor = ConsoleColor.Black;
@@ -98,7 +99,7 @@ namespace OOP.Character
 
                         // 머리카락
                         case 'H':
-                            Console.BackgroundColor = ConsoleColor.DarkYellow;
+                            Console.BackgroundColor = ConsoleColor.Gray;
                             break;
 
                         // 바지
@@ -127,7 +128,8 @@ namespace OOP.Character
                     }
 
                     // 가로 비율을 맞추기 위해 공백 두 칸 출력
-                    Console.Write("  ");
+                    Console.SetCursorPosition(startX + x, startY + y);
+                    Console.Write(" "); ;
                 }
 
                 Console.ResetColor();

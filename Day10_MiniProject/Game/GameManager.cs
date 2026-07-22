@@ -12,18 +12,16 @@ namespace BurgerDream.Game
     {
         public void Start() // 게임 실행
         {
-            Console.SetWindowSize(150, 30);
+            Console.SetBufferSize(220, 60);
+            Console.SetWindowSize(220, 60);
             int select = 0;
-
             
 
             while (true)
             {
-                Console.Clear();
+                
 
-                GameTool.ShowBune();
-                GameTool.ShowTitleA();
-                GameTool.ShowTitleB();
+                TitieCollection();
 
                 GameTool.ShowMainMenu(select);
                 
@@ -53,11 +51,12 @@ namespace BurgerDream.Game
                             switch (select)
                             {
                                 case 0:
-                                    // 게임 시작
-                                 
+                                    // 게임 시작                                   
                                     Console.Clear();
+                                    GameTool.StorySkip();
                                     GameTool.Story();
                                     GameTool.Play();
+                                    
                                     break;
                                   
 
@@ -77,6 +76,14 @@ namespace BurgerDream.Game
                         }
                 }
                 }
+            }
+
+            public static void TitieCollection()
+            {
+                 Console.Clear();
+                 GameTool.ShowBune();
+                 GameTool.ShowTitleA();
+                 GameTool.ShowTitleB();
             }
         }
     }

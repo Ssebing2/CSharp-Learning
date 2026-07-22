@@ -5,7 +5,7 @@ namespace OOP.Character
     public class Bun
     {
  
-        public static void PrintBun()
+        public static void PrintBun(int startX, int startY)
         {
             // 번이 캐릭터 도트 배열
             string[] bun =
@@ -44,19 +44,21 @@ namespace OOP.Character
                 "..........KKKKKK.KKKKKK........."
             };
 
-            // 배열에서 한 줄씩 꺼내기
-            foreach (string line in bun)
+            
+            for (int y = 0; y < bun.Length; y++)
             {
-                // 한 줄 안의 문자를 하나씩 꺼내기
-                foreach (char pixel in line)
+                
+                for (int x = 0; x < bun[y].Length; x++)
                 {
-                    switch (pixel)
-                    {
-                        // 투명 배경
-                        case '.':
-                            Console.BackgroundColor = ConsoleColor.Black;
-                            break;
+                    char pixel = bun[y][x];
 
+                    if (pixel == '.')
+                    {
+                        continue;
+                    }
+
+                    switch (pixel)
+                    {                       
                         // 검은색 외곽선
                         case 'K':
                             Console.BackgroundColor = ConsoleColor.Black;
@@ -123,12 +125,13 @@ namespace OOP.Character
                     }
 
                     // 가로 비율을 맞추기 위해 공백 두 칸 출력
-                    Console.Write("  ");
+                    Console.SetCursorPosition(startX + x, startY + y);
+                    Console.Write(" ");
                 }
 
                 Console.ResetColor();
-                Console.WriteLine();
             }
         }
+        
     }
 }
