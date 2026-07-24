@@ -73,7 +73,7 @@ namespace OOP.Shop_Supplies
             public static void DrawFloor(int startX, int startY)
             {
                 int tileWidth = 16;
-                int tileHeight = 16;
+               
 
                 // 가로로 타일 3개 배치
                 for (int x = 0; x < 7; x++)
